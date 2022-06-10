@@ -3,13 +3,17 @@
 <template>
   <router-view />
 </template>
-<script setup>
-
-
+<script>
+import {getData} from './api/index'
+export default{
+  created(){
+    getData()
+  }
+}
 
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
