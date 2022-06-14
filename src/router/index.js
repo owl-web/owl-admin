@@ -16,7 +16,6 @@ const routes = [
     },
     component :()=> import ('@/components/Info.vue')
   },
-
 ]
 
 console.log(routes)

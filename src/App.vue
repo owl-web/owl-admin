@@ -4,18 +4,12 @@
   <router-view />
 </template>
 <script>
-import {getData} from './api/index'
-import t from './utils/storge'
+
 export default{
   created(){
-    // console.log('------nnnnn------')
-    // getData()
-    this.tsStorge()
   },
   methods:{
-    tsStorge(){
 
-    }
   }
 }
 
