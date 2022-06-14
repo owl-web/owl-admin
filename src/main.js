@@ -4,7 +4,7 @@ import ElementPlus from 'element-plus'
 import "element-plus/dist/index.css"
 import router from './router/index'
 import storge from './utils/storge'
-
+import http from './utils/http'
 console.log(import.meta.env)
 
 const App = createApp(app)
