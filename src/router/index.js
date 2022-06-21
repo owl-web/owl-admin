@@ -1,27 +1,38 @@
-import { createRouter , createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
+const layout = import('@/layout/Index.vue')
 const routes = [
   {
-    name : 'home',
-    path : '/',
-    meta:{
-      title : '首页'
+    name: 'home',
+    path: '/',
+    meta: {
+      title: '首页'
     },
-    component :() => import('@/components/Home.vue') ,
+    component: () => import('@/components/Home.vue'),
   },
   {
-    name : 'info',
-    path : '/info',
-    meta:{
-      title : '首页'
+    name: 'info',
+    path: '/info',
+    meta: {
+      title: '首页'
     },
-    component :()=> import ('@/components/Info.vue')
+    component: layout,
+    children: [
+      {
+        name: 'detail',
+        path: '/info/detail',
+        meta: {
+          title: '首页'
+        },
+        component: () => import('@/components/Info.vue')
+      }
+    ]
   },
 ]
 
 console.log(routes)
 
 const router = createRouter({
-  history : createWebHashHistory(),
+  history: createWebHashHistory(),
   routes
 })
 export default router
