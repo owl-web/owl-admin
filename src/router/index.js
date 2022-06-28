@@ -7,24 +7,25 @@ const routes = [
     meta: {
       title: '首页'
     },
-    component: () => import('@/components/Home.vue'),
-  },
-  {
-    name: 'info',
-    path: '/info',
-    meta: {
-      title: '首页'
-    },
     component: layout,
+    redirect : '/home',
     children: [
       {
-        name: 'detail',
-        path: '/info/detail',
+        name: 'info',
+        path: '/info',
         meta: {
           title: '首页'
         },
         component: () => import('@/components/Info.vue')
-      }
+      },
+      {
+        name: 'home',
+        path: '/home',
+        meta: {
+          title: '首页'
+        },
+        component: () => import('@/components/Home.vue'),
+      },
     ]
   },
 ]
