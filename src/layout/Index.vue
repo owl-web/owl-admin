@@ -1,7 +1,7 @@
 <template>
   <div :class="classNmae">
     <div class="nav">
-      <el-menu :collapse="$store.state.app.collapse" text-color="#fff" active-text-color="#ffd04b"
+      <el-menu :collapse-transition="false" :collapse="$store.state.app.collapse" text-color="#fff" active-text-color="#ffd04b"
         background-color="#545c64" style="height : 100% " default-active="2" class="el-menu-vertical-demo"
         @open="handleOpen" @close="handleClose">
         <el-sub-menu index="1">
@@ -66,20 +66,27 @@ let isOpen = computed(()=>{
 
 <style lang="scss" scoped>
 .layout {
-  display: flex;
   .nav {
-    width: 210px;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 210px;
   }
 
   .content_warp {
-    flex: 1;
+    margin-left: 210px;
+    transition:0.2s;
   }
 }
 
 .layout.hide_menu {
   .nav {
     width: 64px;
+  }
+  .content_warp {
+    margin-left: 64px;
   }
 }
 </style>
