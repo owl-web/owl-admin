@@ -1,4 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+
+
+import componentsRouter from "./modules/components";
+
 const layout = import('@/layout/Index.vue')
 const routes = [
   {
@@ -28,6 +32,8 @@ const routes = [
       },
     ]
   },
+  componentsRouter,
+  // permission
 ]
 
 console.log(routes)

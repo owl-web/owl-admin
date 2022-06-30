@@ -1,7 +1,13 @@
 <template>
   <div class="layout">
     <div class="nav">
-      <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+      <el-menu
+        :collapse="true" 
+        text-color="#fff" 
+        active-text-color="#ffd04b" 
+        background-color="#545c64" 
+        style="height : 100% "
+        default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
         <el-sub-menu index="1">
           <template #title>
             <el-icon>
@@ -37,10 +43,10 @@
         </el-menu-item>
       </el-menu>
     </div>
-    <div class="content">
-      <Navbar/>
-      <Tags/>
-      <router-view/>
+    <div class="content_warp">
+      <Navbar />
+      <Tags />
+
     </div>
   </div>
 </template>
@@ -48,6 +54,7 @@
 <script setup>
 import Navbar from './components/Navbar.vue'
 import Tags from './components/Tags.vue'
+import { Location, Menu as IconMenu, Document, Setting } from '@element-plus/icons-vue'
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +65,9 @@ import Tags from './components/Tags.vue'
   left: 0;
   width: 210px;
 }
-.content {
+
+.content_warp {
   margin-left: 210px;
+
 }
 </style>
