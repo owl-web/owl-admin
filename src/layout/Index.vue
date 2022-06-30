@@ -1,13 +1,9 @@
 <template>
-  <div class="layout">
+  <div :class="classNmae">
     <div class="nav">
-      <el-menu
-        :collapse="true" 
-        text-color="#fff" 
-        active-text-color="#ffd04b" 
-        background-color="#545c64" 
-        style="height : 100% "
-        default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+      <el-menu :collapse="$store.state.app.collapse" text-color="#fff" active-text-color="#ffd04b"
+        background-color="#545c64" style="height : 100% " default-active="2" class="el-menu-vertical-demo"
+        @open="handleOpen" @close="handleClose">
         <el-sub-menu index="1">
           <template #title>
             <el-icon>
@@ -55,19 +51,35 @@
 import Navbar from './components/Navbar.vue'
 import Tags from './components/Tags.vue'
 import { Location, Menu as IconMenu, Document, Setting } from '@element-plus/icons-vue'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
+
+const store = useStore()
+
+let classNmae = computed(() => {
+  return store.state.app.collapse ? 'layout hide_menu' : "layout"
+})
+let isOpen = computed(()=>{
+ return store.state.app.collapse 
+})
 </script>
 
 <style lang="scss" scoped>
-.nav {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 210px;
+.layout {
+  display: flex;
+  .nav {
+    width: 210px;
+    height: 100vh;
+  }
+
+  .content_warp {
+    flex: 1;
+  }
 }
 
-.content_warp {
-  margin-left: 210px;
-
+.layout.hide_menu {
+  .nav {
+    width: 64px;
+  }
 }
 </style>
