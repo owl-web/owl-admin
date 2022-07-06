@@ -1,37 +1,33 @@
 <template>
   <div :class="classNmae">
     <div class="nav">
-      <el-menu :collapse-transition="false" :collapse="$store.state.app.collapse" text-color="#fff" active-text-color="#ffd04b"
-        background-color="#545c64" style="height : 100% " default-active="2" class="el-menu-vertical-demo"
-        @open="handleOpen" @close="handleClose">
-        <el-sub-menu index="1">
-          <template #title>
-            <el-icon>
-              <location />
-            </el-icon>
-            <span>首页</span>
-          </template>
-          <el-menu-item-group title="Group One">
-            <el-menu-item index="1-1">首页1</el-menu-item>
-            <el-menu-item index="1-2">首页1</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="Group Two">
-            <el-menu-item index="1-3">首页3</el-menu-item>
-          </el-menu-item-group>
-        </el-sub-menu>
+      <el-menu :collapse-transition="false" :collapse="$store.state.app.collapse" text-color="#fff"
+        active-text-color="#ffd04b" background-color="#545c64" style="height : 100% " default-active="2"
+        class="el-menu-vertical-demo" :router = "true">
+
         <el-menu-item index="2">
           <el-icon>
             <icon-menu />
           </el-icon>
-          <span>引导页面</span>
+          <span>首页</span>
         </el-menu-item>
+        <el-sub-menu index="/components">
+          <template #title>
+            <el-icon>
+              <location />
+            </el-icon>
+            <span>组件</span>
+          </template>
+          <el-menu-item index="/components/json">JSON</el-menu-item>
+          <el-menu-item index="/components/video">视频</el-menu-item>
+        </el-sub-menu>
         <el-menu-item index="3" disabled>
           <el-icon>
             <document />
           </el-icon>
           <span>系统配置</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="/system/index">
           <el-icon>
             <setting />
           </el-icon>
@@ -42,7 +38,7 @@
     <div class="content_warp">
       <Navbar />
       <Tags />
-
+      <router-view />
     </div>
   </div>
 </template>
@@ -59,8 +55,8 @@ const store = useStore()
 let classNmae = computed(() => {
   return store.state.app.collapse ? 'layout hide_menu' : "layout"
 })
-let isOpen = computed(()=>{
- return store.state.app.collapse 
+let isOpen = computed(() => {
+  return store.state.app.collapse
 })
 </script>
 
@@ -77,7 +73,7 @@ let isOpen = computed(()=>{
 
   .content_warp {
     margin-left: 210px;
-    transition:0.2s;
+    transition: 0.2s;
   }
 }
 
@@ -85,6 +81,7 @@ let isOpen = computed(()=>{
   .nav {
     width: 64px;
   }
+
   .content_warp {
     margin-left: 64px;
   }

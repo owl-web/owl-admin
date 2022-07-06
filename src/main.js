@@ -3,6 +3,7 @@ import app from './App.vue'
 import ElementPlus from 'element-plus'
 import "element-plus/dist/index.css"
 import "./style/reset.css"
+import 'nprogress/nprogress.css'  // 这个nprogress样式必须引入
 import router from './router/index'
 import storge from './utils/storge'
 import http from './utils/http'
