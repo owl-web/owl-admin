@@ -1,3 +1,4 @@
+// 组件路由
 const layout = import('@/layout/Index.vue')
 
 const componentsRouter = {
@@ -12,6 +13,11 @@ const componentsRouter = {
       path: "/components/json",
       name: 'json',
       component: () => import("@/views/components/json.vue")
+    },
+    {
+      path: "/components/video",
+      name: 'video',
+      component: () => import("@/views/components/video.vue")
     }
   ]
 }

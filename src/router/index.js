@@ -1,45 +1,29 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-
+import nProgress from "nprogress";
 
 import componentsRouter from "./modules/components";
+import aboutRouter from './modules/about'
+import systemRouter from './modules/system';
+import routes from "./routes";
 
-const layout = import('@/layout/Index.vue')
-const routes = [
-  {
-    name: 'home',
-    path: '/',
-    meta: {
-      title: '首页'
-    },
-    component: layout,
-    redirect : '/home',
-    children: [
-      {
-        name: 'info',
-        path: '/info',
-        meta: {
-          title: '首页'
-        },
-        component: () => import('@/components/Info.vue')
-      },
-      {
-        name: 'home',
-        path: '/home',
-        meta: {
-          title: '首页'
-        },
-        component: () => import('@/components/Home.vue'),
-      },
-    ]
-  },
-  componentsRouter,
-  // permission
-]
-
-console.log(routes)
-
+const allRoutes =  [...routes , aboutRouter , componentsRouter , systemRouter]
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes: allRoutes
+})
+
+router.beforeEach((to ,form ,netx)=>{
+  console.log(to)
+  console.log(form)
+  nProgress.start()
+
+  setTimeout(() => {
+    netx()
+
+  }, 1500);
+})
+
+router.afterEach((to , form , netx)=>{
+  nProgress.done()
 })
 export default router
