@@ -5,8 +5,7 @@
 </template>
 
 <script setup>
-import { Api_getUser } from "@/api/index.js";
+import {getData} from '@/api/index.js'
 
-console.log('qaq')
-Api_getUser()
+getData()
 </script>
