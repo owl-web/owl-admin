@@ -41,9 +41,8 @@
   </el-menu>
 </template>
 
-<script>
+<script setup>
+import { Location, Menu as IconMenu, Document, Setting } from '@element-plus/icons-vue'
 
-export default {
 
-}
 </script>

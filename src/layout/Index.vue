@@ -1,7 +1,7 @@
 <template>
   <div :class="classNmae">
     <div class="nav">
-    
+      <TreeMenu />
     </div>
     <div class="content_warp">
       <Navbar />
@@ -15,7 +15,6 @@
 import Navbar from './components/Navbar.vue'
 import Tags from './components/Tags.vue'
 import TreeMenu from './components/TreeMenu.vue'
-import { Location, Menu as IconMenu, Document, Setting } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 
