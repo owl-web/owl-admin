@@ -18,6 +18,8 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "sass": "^1.52.3"
+    "mockjs": "^1.1.0",
+    "sass": "^1.52.3",
+    "vite-plugin-mock": "^2.9.6"
   }
 }

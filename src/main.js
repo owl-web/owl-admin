@@ -8,6 +8,8 @@ import router from './router/index'
 import storge from './utils/storge'
 import http from './utils/http'
 import store from './store'
+import mock from './server/mock/test'
+mock()
 
 console.log(import.meta.env)
 
