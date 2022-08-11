@@ -26,6 +26,17 @@
       <el-menu-item index="/components/json">JSON</el-menu-item>
       <el-menu-item index="/components/video">视频</el-menu-item>
     </el-sub-menu>
+    <el-sub-menu index="/error">
+      <template #title>
+        <el-icon>
+          <location />
+        </el-icon>
+        <span>错误页面</span>
+      </template>
+      <el-menu-item index="/error/401">401</el-menu-item>
+      <el-menu-item index="/error/403">404</el-menu-item>
+      <el-menu-item index="/error/404">404</el-menu-item>
+    </el-sub-menu>
     <el-menu-item index="3" disabled>
       <el-icon>
         <document />

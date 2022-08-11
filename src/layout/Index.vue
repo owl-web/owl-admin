@@ -5,16 +5,17 @@
     </div>
     <div class="content_warp">
       <Navbar />
-      <Tags />
+      <Bread />
       <router-view />
     </div>
   </div>
 </template>
 
 <script setup>
-import Navbar from './components/Navbar.vue'
-import Tags from './components/Tags.vue'
-import TreeMenu from './components/TreeMenu.vue'
+import Navbar from './components/navbar.vue'
+import Tags from './components/tags.vue'
+import TreeMenu from './components/treeMenu.vue'
+import Bread from './components/bread.vue'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 
