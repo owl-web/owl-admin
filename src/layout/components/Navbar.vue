@@ -1,6 +1,6 @@
 <template>
   <div class="top_navbar" @click="menuToggle">
-    topNavBar
+    <el-icon><Menu /></el-icon>
   </div>
 </template>
 
