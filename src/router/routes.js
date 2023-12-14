@@ -16,7 +16,7 @@ const routes = [
         name: 'info',
         path: '/info',
         meta: {
-          title: '首页'
+          title: 'Info'
         },
         component: () => import('@/components/Info.vue')
       },
@@ -28,7 +28,16 @@ const routes = [
         },
         component: () => import('@/components/Home.vue'),
       },
+
     ]
+  },
+  {
+    name: 'login',
+    path: '/login',
+    meta: {
+      title: '首页'
+    },
+    component: () => import('@/views/login/index.vue'),
   }
 ]
 
