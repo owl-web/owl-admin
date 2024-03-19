@@ -6,6 +6,8 @@ import aboutRouter from './modules/about'
 import systemRouter from './modules/system';
 import errorRouter from "./modules/error";
 import routes from "./routes";
+import {genterRoutes} from '../utils/asyncRoutes.js'
+
 
 const allRoutes =  [...routes , aboutRouter , componentsRouter , systemRouter , errorRouter]
 const router = createRouter({
@@ -13,9 +15,28 @@ const router = createRouter({
   routes: allRoutes
 })
 
+// 添加路由
+
+
+
+// 防止路由无限循环
+let routeFlag = false;
+
 router.beforeEach((to ,form ,netx)=>{
-  console.log(to)
-  console.log(form)
+ 
+
+  if(routeFlag === false){
+
+    routeFlag = true
+
+    const rs = genterRoutes()
+
+    rs.forEach(item=>{
+      router.addRoute(item)
+    })
+  }
+
+  
   nProgress.start()
 
   setTimeout(() => {
