@@ -7,7 +7,6 @@ import Mock from 'mockjs'
 const Random = Mock.Random
 // mock新闻数据，包括新闻标题title、内容content、创建时间createdTime
 const produceNewsData = function () {
-  console.log("mock is run ")
   let newsList = []
   for (let i = 0; i < 20; i++) {
     let newNewsObject = {
@@ -24,7 +23,6 @@ const produceNewsData = function () {
 
 
 export default ()=>{
-  console.log('qaq')
   Mock.mock('/mock/news', produceNewsData) // 后面讲这个api的使用细节
 
 }

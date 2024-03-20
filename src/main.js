@@ -11,7 +11,7 @@ import store from './store'
 import mock from './server/mock/test'
 mock()
 
-console.log(import.meta.env)
+ 
 
 const App = createApp(app)
 

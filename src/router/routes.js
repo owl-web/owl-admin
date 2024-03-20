@@ -26,7 +26,7 @@ const routes = [
         meta: {
           title: '首页'
         },
-        component: () => import('@/components/Home.vue'),
+        component: () => import('@/views/home/Index.vue'),
       },
 
     ]

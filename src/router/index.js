@@ -34,15 +34,17 @@ router.beforeEach((to ,form ,netx)=>{
     rs.forEach(item=>{
       router.addRoute(item)
     })
+    netx({
+      ...to, 
+      replace:true
+    })
   }
 
   
   nProgress.start()
 
-  setTimeout(() => {
-    netx()
+  netx()
 
-  }, 1500);
 })
 
 router.afterEach((to , form , netx)=>{
