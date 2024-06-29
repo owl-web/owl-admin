@@ -1,34 +1,28 @@
 <template>
   <div>
-    <el-table
-      :data="tableData"
-      style="width: 100%; margin-bottom: 20px"
-      row-key="id"
-      border
-      default-expand-all
-    >
+    <el-table :data="tableData" style="width: 100%; margin-bottom: 20px" row-key="id" border default-expand-all>
       <el-table-column prop="date" label="Date" sortable />
       <el-table-column prop="name" label="菜单名称" sortable />
       <el-table-column prop="path" label="菜单路径" sortable />
-			<el-table-column prop="sortOrder" label="排序" sortable />
-      <el-table-column prop="sortOrder" label="编辑" >
+      <el-table-column prop="sortOrder" label="排序" sortable />
+      <el-table-column prop="sortOrder" label="编辑">
         <el-button type="primary" size="small">修改</el-button>
         <el-button type="primary" size="small">删除</el-button>
       </el-table-column>
     </el-table>
 
- 
+
   </div>
 </template>
 <script lang="ts" setup>
-import {ref} from 'vue'
-import {getMenuData} from '@/api/system.js'
+import { ref } from 'vue'
+import { getUserData } from '@/api/system.js'
 
 
 const tableData = ref<any>([])
-getMenuData().then(res=>{
-	tableData.value = res.data
-	console.log(res)
+getUserData().then(res => {
+  tableData.value = res.data
+  console.log(res)
 })
 
 
@@ -41,7 +35,7 @@ interface User {
   children?: User[]
 }
 
- 
+
 
 // const tableData: User[] = [
 //   {
@@ -84,5 +78,5 @@ interface User {
 //   },
 // ]
 
- 
+
 </script>

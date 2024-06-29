@@ -1,5 +1,6 @@
+import Layout from '@/layout/index.vue'
 export const genterRoutes = function () {
-  return  [
+  return [
     {
       id: 1,
       title: "数据预览",
@@ -7,32 +8,25 @@ export const genterRoutes = function () {
       path: "/home",
     },
     {
-      id: 2,
-      title: "用户列表",
-      icon: "el-icon-user",
-      path: "/zs",
-      meta:{
-        title:'q'
-      },
-      component: () => import('@/components/Info.vue')
-    },
-    {
       id: 3,
-      title: "题库列表",
+      title: "系统配置",
       icon: "el-icon-edit-outline",
-      path: "/home",
+      path: "/system",
+      component: Layout,
       children: [
         {
           id: 4,
-          title: "企业列表",
+          title: "菜单列表",
           icon: "el-icon-office-building",
-          path: "/home",
+          path: "/system/menu",
+          component: () => import('@/views/system/menu.vue')
         },
         {
           id: 5,
-          title: "学科列表",
+          title: "用户列表",
           icon: "el-icon-notebook-2",
-          path: "/home",
+          path: "/system/user",
+          component: () => import('@/views/system/user.vue')
         },
       ],
     },

@@ -9,17 +9,26 @@ import storge from './utils/storge'
 import http from './utils/http'
 import store from './store'
 import mock from './server/mock/test'
+import { createPinia } from 'pinia'
+
+
+
+
 mock()
 
  
 
 const App = createApp(app)
+const pinia = createPinia()
 
 App.config.globalProperties.$http = http
 App.config.globalProperties.$storge = storge
 
 
-App.use(router).use(store).use(ElementPlus).mount('#app')
+App.use(router).use(store).use(pinia).use(ElementPlus).mount('#app')
 
 
 
+
+
+ 

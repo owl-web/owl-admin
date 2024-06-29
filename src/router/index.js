@@ -7,6 +7,7 @@ import systemRouter from './modules/system';
 import errorRouter from "./modules/error";
 import routes from "./routes";
 import {genterRoutes} from '../utils/asyncRoutes.js'
+import { getToken } from "@/utils/utils.js";
 
 
 const allRoutes =  [...routes , aboutRouter , componentsRouter , systemRouter , errorRouter]
@@ -22,7 +23,25 @@ const router = createRouter({
 // 防止路由无限循环
 let routeFlag = false;
 
-router.beforeEach((to ,form ,netx)=>{
+router.beforeEach((to ,form ,next)=>{
+  // 获取token 
+
+  const token = getToken()
+  
+  if(!token){
+    if(to.path === '/login'){
+
+      next()
+    }else{
+       router.replace({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+      return
+    }
+
+  }
+
  
 
   if(routeFlag === false){
@@ -34,7 +53,7 @@ router.beforeEach((to ,form ,netx)=>{
     rs.forEach(item=>{
       router.addRoute(item)
     })
-    netx({
+    next({
       ...to, 
       replace:true
     })
@@ -43,11 +62,11 @@ router.beforeEach((to ,form ,netx)=>{
   
   nProgress.start()
 
-  netx()
+  next()
 
 })
 
-router.afterEach((to , form , netx)=>{
+router.afterEach((to , form , next)=>{
   nProgress.done()
 })
 export default router

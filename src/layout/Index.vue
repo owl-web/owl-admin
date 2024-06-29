@@ -13,7 +13,6 @@
 
 <script setup>
 import Navbar from './components/navbar.vue'
-import Tags from './components/tags.vue'
 import TreeMenu from './components/treeMenu.vue'
 import Bread from './components/bread.vue'
 import { useStore } from 'vuex'
