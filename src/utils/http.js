@@ -12,7 +12,7 @@ http.interceptors.request.use(function(config){
 })
 
 http.interceptors.response.use(function(response){
-  return response
+  return response.data
 } , function(err){
   return Promise.reject(err)
 })

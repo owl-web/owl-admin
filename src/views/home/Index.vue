@@ -1,5 +1,6 @@
 <template>
   <div>
+    HomeZZZAAA
   </div>
 </template>
 
@@ -8,5 +9,6 @@ import Menu from '@/components/menu/Menu.vue'
 
 
 
+ 
 </script>
 
