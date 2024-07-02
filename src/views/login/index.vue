@@ -3,7 +3,7 @@
     <div class="forms-container">
       <div class="signin-signup">
         <form  class="sign-in-form">
-          <h2 class="title">登录{{ userInfo.token }}</h2>
+          <h2 class="title">登录</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input type="text" v-model="name" placeholder="用户名" />

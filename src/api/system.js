@@ -21,3 +21,8 @@ export const getUserData = ()=>{
 }
 
 
+// 获取菜单列表
+
+export const getRoleData = ()=>{
+  return http.get("/api/api/system/roles")
+}

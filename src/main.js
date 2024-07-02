@@ -10,7 +10,7 @@ import http from './utils/http'
 import store from './store'
 import mock from './server/mock/test'
 import { createPinia } from 'pinia'
-
+import './style/index.scss'
 
 
 

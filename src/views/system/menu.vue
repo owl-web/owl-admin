@@ -1,13 +1,16 @@
 <template>
   <div>
+
+    
+    
     <el-table
       :data="tableData"
       style="width: 100%; margin-bottom: 20px"
       row-key="id"
       border
       default-expand-all
+      :tree-props="{ children: 'children', hasChildren: true }"
     >
-      <el-table-column prop="date" label="Date" sortable />
       <el-table-column prop="name" label="菜单名称" sortable />
       <el-table-column prop="path" label="菜单路径" sortable />
 			<el-table-column prop="sortOrder" label="排序" sortable />
@@ -23,11 +26,12 @@
 <script lang="ts" setup>
 import {ref} from 'vue'
 import {getMenuData} from '@/api/system.js'
+import { listToTree } from '@/utils/utils.js'
 
 
 const tableData = ref<any>([])
 getMenuData().then(res=>{
-	tableData.value = res.data
+	tableData.value =  listToTree(res.data)
 	console.log(res)
 })
 

@@ -6,7 +6,9 @@
     <div class="content_warp">
       <Navbar />
       <Bread />
-      <router-view />
+      <div class="content_card">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>

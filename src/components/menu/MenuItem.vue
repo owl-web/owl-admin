@@ -5,7 +5,7 @@
     <el-sub-menu v-if="item.children" :index="item.path || item.label">
       <template #title>
         <!-- <Icon v-if="item.icon" :type="item.icon" /> -->
-        <span>{{ item.title }}333</span>
+        <span>{{ item.title }}</span>
       </template>
       <MenuList :menuList="item.children" />
     </el-sub-menu>

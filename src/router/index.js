@@ -3,14 +3,13 @@ import nProgress from "nprogress";
 
 import componentsRouter from "./modules/components";
 import aboutRouter from './modules/about'
-import systemRouter from './modules/system';
 import errorRouter from "./modules/error";
 import routes from "./routes";
 import {genterRoutes} from '../utils/asyncRoutes.js'
 import { getToken } from "@/utils/utils.js";
 
 
-const allRoutes =  [...routes , aboutRouter , componentsRouter , systemRouter , errorRouter]
+const allRoutes =  [...routes , aboutRouter , componentsRouter  , errorRouter]
 const router = createRouter({
   history: createWebHashHistory(),
   routes: allRoutes
@@ -23,7 +22,7 @@ const router = createRouter({
 // 防止路由无限循环
 let routeFlag = false;
 
-router.beforeEach((to ,form ,next)=>{
+router.beforeEach(async (to ,form ,next)=>{
   // 获取token 
 
   const token = getToken()
@@ -48,8 +47,8 @@ router.beforeEach((to ,form ,next)=>{
 
     routeFlag = true
 
-    const rs = genterRoutes()
-
+    const rs = await genterRoutes()
+    console.log(rs  , 'rs-------')
     rs.forEach(item=>{
       router.addRoute(item)
     })
