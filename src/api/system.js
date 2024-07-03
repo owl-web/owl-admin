@@ -26,3 +26,9 @@ export const getUserData = ()=>{
 export const getRoleData = ()=>{
   return http.get("/api/api/system/roles")
 }
+
+// 获取用户角色信息
+
+export const getUserRole = (data)=>{
+  return http.get("/api/api/system/userroles" , {params:data})
+}
