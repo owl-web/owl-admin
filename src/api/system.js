@@ -10,11 +10,23 @@ export const login  = (data)=>{
   return http.post("/api/base/login"  , data)
 }
 
+// 新增菜单
+
+export const addMenu = (data)=>{
+  return http.post("/api/api/system/addmenu"  , data)
+
+}
 // 获取菜单列表
 export const getMenuData = ()=>{
   return http.get("/api/api/system/menu")
 }
 
+
+// 删除菜单
+
+export const  deleteMenu = (data)=>{
+  return http.post('/api/api/system/deletemenu',  data)
+}
 // 获取用户列表
 export const getUserData = ()=>{
   return http.get("/api/api/user/list")

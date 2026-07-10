@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owl Admin - 视觉方向提案</title>
+  <style>
+    *{box-sizing:border-box}html{font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif;color:#17201d;background:#f4f6f3}body{margin:0;min-height:100vh}.shell{max-width:1280px;margin:auto;padding:56px 32px 72px}.top{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding-bottom:30px;border-bottom:1px solid #d9ded9}.brand{display:flex;align-items:center;gap:14px;margin-bottom:28px;font-weight:700}.mark{display:grid;place-items:center;width:36px;height:36px;background:#1d2925;color:white;border-radius:7px;font-size:14px}.brand span{font-size:15px}.eyebrow{font-size:12px;color:#647069;font-weight:700;text-transform:uppercase;margin-bottom:12px}.top h1{font-size:clamp(32px,5vw,64px);line-height:1.03;margin:0;max-width:760px;font-weight:650;letter-spacing:0}.top p{max-width:360px;color:#65716b;line-height:1.8;margin:0 0 4px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}.card{position:relative;min-height:310px;padding:28px;background:#fff;border:1px solid #dfe3df;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;transition:.25s ease}.card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(20,35,29,.1)}.num{font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:#7a8580}.card h2{margin:60px 0 10px;font-size:26px;font-weight:650}.card p{color:#69736f;font-size:14px;line-height:1.7;max-width:390px;margin:0}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}.tag{font-size:11px;padding:6px 9px;border:1px solid #dfe4e1;border-radius:4px;color:#55615b}.preview{position:absolute;right:-35px;top:24px;width:44%;height:118px;border-radius:5px;border:1px solid rgba(0,0,0,.08);overflow:hidden}.preview:before{content:"";display:block;width:22%;height:100%;background:var(--side)}.preview:after{content:"";position:absolute;left:28%;right:8%;top:18px;height:9px;background:var(--line);box-shadow:0 20px 0 var(--line),0 40px 0 var(--line),0 66px 0 var(--line)}.one{--side:#172e29;--line:#dfe7e2}.two{background:#101619;color:#edf4f0;border-color:#283237;--side:#c7ff54;--line:#344146}.two p,.two .num{color:#93a19b}.two .tag{border-color:#38433f;color:#b3bdb8}.three{--side:#e85d3f;--line:#e9e2db;background:#fffdf9}.four{--side:#121212;--line:#d8d8d8;background:#f7f7f7}.foot{display:flex;justify-content:space-between;gap:20px;margin-top:30px;color:#7c8580;font-size:12px}.foot a{color:#1d2925}.arrow{position:absolute;right:26px;bottom:24px;font-size:22px}.two .arrow{color:#c7ff54}@media(max-width:760px){.shell{padding:30px 18px 44px}.top{display:block}.top p{margin-top:22px}.grid{grid-template-columns:1fr}.card{min-height:290px}.preview{width:40%}.foot{display:block;line-height:1.8}}
+  </style>
+  <style>.five{grid-column:1/-1;min-height:220px;background:#f0f8f6;--side:#0e9f98;--line:#cfe5e1}.five h2{margin-top:42px}@media(max-width:760px){html,body{max-width:100%;overflow-x:hidden}.top,.grid,.card{min-width:0}.top h1,.card h2,.card p{max-width:100%;overflow-wrap:anywhere}.card{width:100%}.preview{right:-20px}.five{grid-column:auto;min-height:290px}}</style>
+</head>
+<body>
+  <main class="shell">
+    <div class="brand"><span class="mark">OA</span><span>OWL ADMIN / UI EXPLORATION</span></div>
+    <header class="top">
+      <div><div class="eyebrow">Four interface directions</div><h1>为管理后台，找一种更合适的表达。</h1></div>
+      <p>四套页面使用相近的运营数据与管理场景，从导航、密度、色彩和信息层级上分别探索。点击任意方案查看完整页面。</p>
+    </header>
+    <section class="grid">
+      <a class="card one" href="demo-01-calm.html"><div class="num">DIRECTION / 01</div><div class="preview"></div><h2>静谧企业</h2><p>克制、可信、留白适中。面向日常运营和权限管理，长时间使用也不会产生视觉疲劳。</p><div class="tags"><span class="tag">侧边导航</span><span class="tag">柔和中性色</span><span class="tag">经营概览</span></div><span class="arrow">↗</span></a>
+      <a class="card two" href="demo-02-command.html"><div class="num">DIRECTION / 02</div><div class="preview"></div><h2>暗色指挥台</h2><p>强对比、实时状态、快速判断。更适合监控中心、系统运维和需要持续关注告警的场景。</p><div class="tags"><span class="tag">深色界面</span><span class="tag">高对比状态</span><span class="tag">实时监控</span></div><span class="arrow">↗</span></a>
+      <a class="card three" href="demo-03-friendly.html"><div class="num">DIRECTION / 03</div><div class="preview"></div><h2>清爽协作</h2><p>温和、亲切、强调人与任务。适合团队协作、客户管理以及业务人员高频使用的工作台。</p><div class="tags"><span class="tag">顶部导航</span><span class="tag">暖色点缀</span><span class="tag">团队动态</span></div><span class="arrow">↗</span></a>
+      <a class="card four" href="demo-04-dense.html"><div class="num">DIRECTION / 04</div><div class="preview"></div><h2>高密度专业</h2><p>极简、理性、效率优先。面向数据量大、操作频繁的专业用户，让更多信息停留在一个视口内。</p><div class="tags"><span class="tag">窄栏布局</span><span class="tag">单色体系</span><span class="tag">数据表格</span></div><span class="arrow">↗</span></a>
+      <a class="card five" href="demo-05-data-source.html"><div class="num">COMPONENT STUDY / 05</div><div class="preview"></div><h2>数据源列表</h2><p>从连接器、健康状态、响应延迟到行内测试反馈，围绕数据源对象建立一套完整的列表组件语言。</p><div class="tags"><span class="tag">连接器组件</span><span class="tag">状态反馈</span><span class="tag">详情检查器</span></div><span class="arrow">↗</span></a>
+    </section>
+    <footer class="foot"><span>Static HTML prototypes · 2026</span><span>建议使用桌面浏览器查看完整效果</span></footer>
+  </main>
+</body>
+</html>

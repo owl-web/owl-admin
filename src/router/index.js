@@ -31,6 +31,8 @@ router.beforeEach(async (to ,form ,next)=>{
     if(to.path === '/login'){
 
       next()
+      return
+
     }else{
        router.replace({
         path: '/login',
